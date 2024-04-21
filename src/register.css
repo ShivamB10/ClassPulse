@@ -1,0 +1,73 @@
+/* Register.css */
+
+/* Styles for the register form container */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+ }
+  
+.register-content{
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+}
+  /* Styles for the register form */
+  .register-form {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Styles for form labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  /* Styles for form inputs */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Styles for submit button */
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles for the "Already have an account?" button */
+  .register-links button {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .register-links button:hover {
+    text-decoration: underline;
+  }
+  
