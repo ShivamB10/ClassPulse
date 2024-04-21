@@ -1,5 +1,0 @@
-/* Hover effect example */
-.navbar-nav .nav-item .nav-link:hover {
-    color: #007bff; /* Change text color on hover */
-    background-color: rgba(0, 123, 255, 0.1); /* Change background color on hover */
-}
