@@ -1,0 +1,10 @@
+.icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+  }
+.container{
+    padding-top: 50px;
+}

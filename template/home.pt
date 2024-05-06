@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../static/home.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Welcome to Class Pulse</h1>
+    </nav>
+
+    <div class="container">
+        <section class="intro">
+            <p>ClassPulse is designed to revolutionize the way educational 
+               feedback is gathered and analyzed. Its primary purpose is to 
+               harness advanced machine learning models to interpret the 
+               complex emotions and opinions expressed in student feedback, 
+               transforming raw text into actionable insights. In this project, we
+               have implemented the above-described system using the four pillars
+               of OOD namely Abstraction, Polymorphism, Inheritance, and Encapsulation.</p>
+        </section>
+        
+        <section class="features">
+            <h2>Features of Our System:</h2>
+            <div class="feature-links">
+                <ul>
+                    <li tal:condition="user_role in ['TA', 'Student']"><a href="/givefeedback">Give Feedback</a></li>
+                    <li tal:condition="user_role in ['Instructor','Teacher']"><a href="/viewfeedback">View Feedback</a></li>
+                    <li><a href="/register">User Register</a></li>
+                    <li><a href="/login">User Login</a></li>
+                    <li><a href="/registercourse">Register Course</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

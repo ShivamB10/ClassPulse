@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/register.css" rel="stylesheet">
+</head> 
+<body>
+
+<!-- Navbar Section -->
+    <!-- Changes start -->
+    <nav class="navbar navbar-expand-sm bg-dark fixed-top text-light">
+
+        <div class="container-fluid">
+          <!-- Links -->
+          <div class="row w-100">
+            <div class="col text-center">
+                <a class="nav-link" href="./register">Register</a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link" href="./login">Login</a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link" href="./givefeedback">Give Feedback</a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link" href="./viewfeedback">View Feedback</a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link" href="#" id="roleNavItem">
+                    <i class="bi bi-person"></i> Role: 
+                </a>
+            </div>
+        </div>
+        </div>
+      
+    </nav>
+    
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="card shadow rounded">
+            <div class="card-body">
+                <h1 class="card-title text-center custom-color mb-4 ">Register</h1>
+                <form id="registerForm" action="/register" method="post">
+                    <!-- Form fields here -->
+                    <div class="mb-3">
+                        <label for="fname" class="form-label">First Name:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" id="fname" name="fname" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lname" class="form-label">Last Name:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" id="lname" name="lname" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="Role" class="form-label" >Role:</label>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select One
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" data-value="Student">Student</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="TA">TA</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="Teacher">Teacher</a></li>
+                            </ul>
+                            <input type="hidden" id="selectedValue" name="selectedValue" required>
+                            <div class="invalid-feedback">Please select a role.</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">                      
+                        <label for="email" class="form-label">Email:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pass" class="form-label">Password:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" id="pass" name="pass" required>
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="repass" class="form-label">Re-enter Password:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" id="repass" name="repass" required>
+                            <button class="btn btn-outline-secondary" type="button" id="toggleRePassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button id="submitButton" type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+<script>
+$(document).ready(function() {
+    $(".dropdown-item").click(function(e) {
+        e.preventDefault();  // Prevent the default anchor click behavior
+        var selectedValue = $(this).attr("data-value");  // Get the data-value attribute of the clicked item
+        var targetInput = $(this).closest('.dropdown').find('input[type="hidden"]');  // Find the hidden input related to this dropdown
+        targetInput.val(selectedValue);  // Set the value of the hidden input
+
+        var button = $(this).closest('.dropdown').find('.dropdown-toggle');  // Find the dropdown button
+        button.text($(this).text());  // Change the button text to the selected item's text
+    });
+});
+
+</script>
+</body>
+</html>
